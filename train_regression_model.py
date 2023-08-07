@@ -106,9 +106,9 @@ else:  # scaffold
     validation_smiles = [item[0] for item in val.smiles()]
     test_smiles = [item[0] for item in test.smiles()]
 
-    train_df = pd.DataFrame(np.column_stack([train_smiles, train.targets()]), columns=["SELFIES", "MLM"])
-    validation_df = pd.DataFrame(np.column_stack([validation_smiles, val.targets()]), columns=["SELFIES", "MLM"])
-    test_df = pd.DataFrame(np.column_stack([test_smiles, test.targets()]), columns=["SELFIES", "MLM"])
+    train_df = pd.DataFrame(np.column_stack([train_smiles, train.targets()]), columns=["SELFIES", "target"])
+    validation_df = pd.DataFrame(np.column_stack([validation_smiles, val.targets()]), columns=["SELFIES", "target"])
+    test_df = pd.DataFrame(np.column_stack([test_smiles, test.targets()]), columns=["SELFIES", "target"])
 
 train_df = smiles_to_selfies(train_df)
 validation_df = smiles_to_selfies(validation_df)
